@@ -1,0 +1,22 @@
+package com.rays.junit;
+
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+public class TestUserDelete {
+
+	@Test
+	public void delete() throws Exception {
+		
+	UserBean bean =	UserModel.findByPk(13);
+
+		UserModel.delete(bean);
+
+		 bean = UserModel.findByPk(13);
+
+	//	assertNull("data not deleted", bean);
+		assertTrue("is not delete", bean == null);
+	}
+}
