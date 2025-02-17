@@ -1,0 +1,28 @@
+package com.rays.junit;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+public class TestUserAdd {
+
+	@Test
+	public void testAdd() throws Exception {
+
+		UserBean bean = new UserBean();
+		bean.setId(16);
+		bean.setName("rishab");
+		bean.setSalary(5000);
+
+		UserModel model = new UserModel();
+
+		model.add(bean);
+
+		bean = model.findByPk(15);
+
+		assertNotNull("record is not added", bean);
+	//	assertTrue("is not true",bean == null);
+
+	}
+
+}
